@@ -13,3 +13,7 @@ data sets:
 2. Energy Census and Economic Data US 2010-2014.csv, https://www.kaggle.com/lislejoem/us_energy_census_gdp_10-14
 
 3. kaggle_income.csv, https://www.kaggle.com/goldenoakresearch/us-household-income-stats-geo-locations#kaggle_income.csv
+
+4. 2018 State Government Tax Dataset, https://www.census.gov/data/tables/2018/econ/stc/2018-annual.html
+
+5. Happiest States in America, https://wallethub.com/edu/happiest-states/6959/#methodology
