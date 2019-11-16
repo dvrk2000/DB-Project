@@ -16,4 +16,4 @@ data sets:
 
 4. 2018 State Government Tax Dataset, https://www.census.gov/data/tables/2018/econ/stc/2018-annual.html
 
-5. Happiest States in America, https://wallethub.com/edu/happiest-states/6959/#methodology
+5. Happiest States in America, http://worldpopulationreview.com/states/happiest-states/
