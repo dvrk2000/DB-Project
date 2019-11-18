@@ -30,14 +30,15 @@ page_two <- tabPanel(
     sidebarPanel(
       helpText("Create bar charts with information from states insurance coverage"),
       
-      selectInput("category",
+      selectInput("state",
                   label = "Choose a category to compare",
-                  choices = c("Uninsured.Rate..2010.", "Uninsured.Rate..2015.", "Average.Monthly.Tax.Credit..2016."),
-                  selected = "Uninsured.Rate..2010.")
+                  choices = c("Washington", "California", "Alabama"),
+                  selected = "Washington")
     ),
     
     mainPanel(
-      plotOutput("barChart"),
+      plotOutput("heatMap"),
+      plotOutput("xx")
     )
   )
 )
