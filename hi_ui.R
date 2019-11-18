@@ -1,4 +1,5 @@
 # Information page
+source("analysis.R")
 page_one <- tabPanel(
   "About us",
   titlePanel("Purpose"),
@@ -32,13 +33,13 @@ page_two <- tabPanel(
       
       selectInput("state",
                   label = "Choose a category to compare",
-                  choices = c("Washington", "California", "Alabama"),
-                  selected = "Washington")
+                  choices = c("United States", unique(diabetes_df$State)),
+                  selected = "United States")
     ),
     
     mainPanel(
-      plotOutput("heatMap"),
-      plotOutput("xx")
+      plotOutput("map"),
+      plotOutput("barchart")
     )
   )
 )
