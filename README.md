@@ -17,3 +17,13 @@ data sets:
 4. 2018 State Government Tax Dataset, https://www.census.gov/data/tables/2018/econ/stc/2018-annual.html
 
 5. Happiest States in America, http://worldpopulationreview.com/states/happiest-states/
+
+6. 2000 - 2015 Life expectancy, https://www.kaggle.com/kumarajarshi/life-expectancy-who
+
+7. 1970 - 2017 GDP, https://www.kaggle.com/fernandol/countries-of-the-world
+
+8. 2015 World happiest, https://www.kaggle.com/unsdsn/world-happiness#2015.csv
+
+9. 2016 World happiest, https://www.kaggle.com/unsdsn/world-happiness#2016.csv
+
+10. 2017 World happiest, https://www.kaggle.com/unsdsn/world-happiness#2017.csv
