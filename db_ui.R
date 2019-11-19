@@ -133,7 +133,7 @@ page_four <- tabPanel(
 
 ui <- navbarPage(
   theme = shinythemes::shinytheme("flatly"),
-  "Health Insurance Report",
+  "Diabetes Report",
   page_one,
   page_two,
   page_three,
