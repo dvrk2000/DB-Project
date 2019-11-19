@@ -14,8 +14,9 @@ get_df <- function(df_name) {
 }
 
 diabetes_df <- get_df("diagnosed_diabetes.csv")
-
 get_specific_state <- function(state) {
   diabetes_states <- diabetes_df %>%
     filter(State == state)
 }
+
+inactivity_df <- get_df("physical_inactivity.csv")

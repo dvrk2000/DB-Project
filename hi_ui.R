@@ -46,7 +46,24 @@ page_two <- tabPanel(
 
 # Interpretation Page
 page_three <- tabPanel(
-  "Insights"
+  "Insights",
+  titlePanel("DataVisualization"),
+  
+  sidebarLayout(
+    sidebarPanel(
+      helpText("Create bar charts with information from states insurance coverage"),
+      
+      selectInput("state1",
+                  label = "Choose a category to compare",
+                  choices = c("United States", unique(inactivity_df$State)),
+                  selected = "United States")
+    ),
+    
+    mainPanel(
+      plotOutput("map1"),
+      plotOutput("barchart1")
+    )
+  )
 )
 
 # Technical report page
