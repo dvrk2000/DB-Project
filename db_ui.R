@@ -15,7 +15,7 @@ page_one <- tabPanel(
     ),
     
     mainPanel(
-      h3("Health insurance coverage in U.S"),
+      h3("Diabetes Report"),
       p("Plots, data tables, etc. would go here"),
       img(src = "test.jpg", height = 500, width = 500)
     )
