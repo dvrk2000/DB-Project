@@ -22,48 +22,107 @@ page_one <- tabPanel(
   )
 )
 
-# Data visualization page
-page_two <- tabPanel(
-  "Visualizations",
-  titlePanel("DataVisualization"),
-  
+vis1 <- tabPanel(
+  "Diabetes Info",
   sidebarLayout(
     sidebarPanel(
       helpText("Create bar charts with information from states insurance coverage"),
-      
-      selectInput("state",
+      selectInput("state_d",
                   label = "Choose a category to compare",
                   choices = c("United States", unique(diabetes_df$State)),
                   selected = "United States")
     ),
-    
     mainPanel(
-      plotOutput("map"),
-      plotOutput("barchart")
+      plotOutput("map_d"),
+      plotOutput("barchart_d")
     )
   )
 )
 
-# Interpretation Page
-page_three <- tabPanel(
-  "Insights",
-  titlePanel("DataVisualization"),
-  
+vis2 <- tabPanel(
+  "Physical Inactivity Info",
   sidebarLayout(
     sidebarPanel(
       helpText("Create bar charts with information from states insurance coverage"),
       
-      selectInput("state1",
+      selectInput("state_p",
                   label = "Choose a category to compare",
                   choices = c("United States", unique(inactivity_df$State)),
                   selected = "United States")
     ),
-    
     mainPanel(
-      plotOutput("map1"),
-      plotOutput("barchart1")
+      plotOutput("map_p"),
+      plotOutput("barchart_p")
     )
   )
+)
+
+vis3 <- tabPanel(
+  "Obesity Info",
+  sidebarLayout(
+    sidebarPanel(
+      helpText("Create bar charts with information from states insurance coverage"),
+      
+      selectInput("state_o",
+                  label = "Choose a category to compare",
+                  choices = c("United States", unique(obesity_df$State)),
+                  selected = "United States")
+    ),
+    mainPanel(
+      plotOutput("map_o"),
+      plotOutput("barchart_o")
+    )
+  )
+)
+
+vis4 <- tabPanel(
+  "Compare",
+  sidebarLayout(
+    sidebarPanel(
+      helpText("Choose one"),
+      
+      selectInput("state1",
+                  label = "Choose a category to compare",
+                  choices = c("D", "P", "O"),
+                  selected = "D"),
+      selectInput("state2",
+                  label = "Choose a category to compare",
+                  choices = c("D", "P", "O"),
+                  selected = "P"),
+      selectInput("state3",
+                  label = "Choose a category to compare",
+                  choices = c("D", "P", "O"),
+                  selected = "O")
+    ),
+    mainPanel(
+      plotOutput("s1"),
+      plotOutput("s2"),
+      plotOutput("s3")
+    )
+  )
+)
+
+# Data visualization page
+page_two <- navbarMenu(
+  "Visualizations",
+  vis1,
+  vis2,
+  vis3,
+  vis4
+)
+
+
+
+
+
+
+
+
+
+# Interpretation Page
+page_three <- tabPanel(
+  "Insights",
+  titlePanel("xxxxxxxx")
 )
 
 # Technical report page

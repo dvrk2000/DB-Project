@@ -1,61 +1,83 @@
 library(ggplot2)
-library(maps)
-library(ggmap)
 source("analysis.R")
 
 server <- function(input, output) {
-
-  output$map <- renderPlot({
-    df <- get_specific_state(input$state)
-    if (input$state == "United States") {
+  output$map_d <- renderPlot({
+    df <- get_specific_state(input$state_d, diabetes_df)
+    if (input$state_d == "United States") {
       df <- diabetes_df
     }
-    plot_usmap(
-      data = df, values = "Percentage", include = df$State, color = "red"
-    ) + 
-      scale_fill_continuous(
-        low = "white", high = "red", name = "Diabetes (2016)", label = scales::comma
-      ) + 
-      labs(title = paste("Diabetes in", input$state)) +
-      theme(legend.position = "right")
+    createHeatMap(df, "Diabetes rate (2016)", "red")
   })
-  output$barchart <- renderPlot({
-    if (input$state != "United States") {
-      ggplot(sample_n(get_specific_state(input$state), 12), aes(x = County, y = Percentage)) +
-        geom_col() +
-        geom_errorbar(aes(ymin = Lower.Limit, ymax = Upper.Limit), width = .2,
-                      position = position_dodge(.9)) +
-        ggtitle("Diabetes percentage by county")
-    }
-  })
-  
-  output$map1 <- renderPlot({
-    df <- get_specific_state(input$state1)
-    if (input$state1 == "United States") {
+  output$map_p <- renderPlot({
+    df <- get_specific_state(input$state_p, inactivity_df)
+    if (input$state_p == "United States") {
       df <- inactivity_df
     }
-    plot_usmap( #input$State1
-      data = df, values = "Percentage", include = df$State, color = "red"
-    ) + 
-      scale_fill_continuous(
-        low = "white", high = "red", name = "Inactivity (2016)", label = scales::comma
-      ) + 
-      labs(title = paste("Inactivity in", input$state1)) +
-      theme(legend.position = "right")
+    createHeatMap(df, "Inactivity rate (2016)", "blue")
   })
-  output$barchart1 <- renderPlot({
-    if (input$state1 != "United States") {
-      data <- get_specific_state(input$state1)
-      if (nrow(data) > 12) {
-        data <- sample_n(data, 12)
+  output$map_o <- renderPlot({
+    df <- get_specific_state(input$state_o, obesity_df)
+    if (input$state_o == "United States") {
+      df <- obesity_df
+    }
+    createHeatMap(df, "Obesity rate (2016)", "Orange")
+  })
+  
+  output$barchart_d <- renderPlot({
+    if (input$state_d != "United States") {
+      df <- get_specific_state(input$state_d, diabetes_df)
+      if (nrow(df) >12) {
+        df <- sample_n(df, 12)
       }
-      ggplot(data, aes(x = County, y = Percentage)) +
-        geom_col() +
-        geom_errorbar(aes(ymin = Lower.Limit, ymax = Upper.Limit), width = .2,
-                      position = position_dodge(.9)) +
-        ggtitle("Inactivity percentage by county")
+      creatBarChart(df, "Diabetes percentage by county", "darkred")
+    }
+  })
+  output$barchart_p <- renderPlot({
+    if (input$state_p != "United States") {
+      df <- get_specific_state(input$state_p, inactivity_df)
+      if (nrow(df) > 12) {
+        df <- sample_n(df, 12)
+      }
+      creatBarChart(df, "Inactivity percentage by county", "navyblue")
+    }
+  })
+  output$barchart_o <- renderPlot({
+    if (input$state_o != "United States") {
+      df <- get_specific_state(input$state_o, inactivity_df)
+      if (nrow(df) > 12) {
+        df <- sample_n(df, 12)
+      }
+      creatBarChart(df, "Obesity percentage by county", "gold")
     }
   })
   
-  
+  # Testttttttt
+  output$s1 <- renderPlot({
+    if (input$state_d != "United States") {
+      df <- get_specific_state(input$state_d, diabetes_df)
+      if (nrow(df) >12) {
+        df <- sample_n(df, 12)
+      }
+      creatBarChart(df, "Diabetes percentage by county", "darkred")
+    }
+  })
+  output$s2 <- renderPlot({
+    if (input$state_d != "United States") {
+      df <- get_specific_state(input$state_d, diabetes_df)
+      if (nrow(df) >12) {
+        df <- sample_n(df, 12)
+      }
+      creatBarChart(df, "Diabetes percentage by county", "darkred")
+    }
+  })
+  output$s3 <- renderPlot({
+    if (input$state_d != "United States") {
+      df <- get_specific_state(input$state_d, diabetes_df)
+      if (nrow(df) >12) {
+        df <- sample_n(df, 12)
+      }
+      creatBarChart(df, "Diabetes percentage by county", "darkred")
+    }
+  })
 }
