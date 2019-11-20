@@ -1,29 +1,6 @@
-# Health Insurance Disparities in the U.S.
+# Diabetes in the United States
 ## What is the project?
 
-Our team is determined to show the disparities in healthcare insurance across the United States. The U.S. healthcare system needs to be reformed and we are hoping to start the conversation on how we can get healthcare insurance to the entire population of the U.S. We want to do this by showing these disparities through impactful visualizations that emphasize the importance of people that don't have healthcare coverage. We want people to see that the those without insurance matter and deserve to have affordable healthcare in some shape or form.
+Our team is determined to show the issue of diabetes in the United States. In the current environment, dealing with diabetes has become more of a burden and we would like to help reduce the number of people that deal with diabetes. The U.S. is currently experiencing issues with the rapid rise of diagnosed diabetes, along with the rapid rise in the cost of healthcare. The deaths caused by diabetes are also gradually rising in a nation where medicine should be readily available and accessible. This team wants to find another way to help reduce the likelihood of diabetes and reduce complications of diabetes by tackling the risk factors associated with diabetes that are more in control by the individual. Risk factors like obesity and physical inactivity are assumed to have a relationship with the increased diagnoses of diabetes and could make maintaining the disease more difficult. If we can show people that living a certain lifestyle could guide them to a path of more expensive healthcare and health complications, then we hope that this project could contribute to someone's choice in leading a healthier life. 
 
-See detail in our [Wiki](https://github.com/dvrk2000/HI-Project/wiki)
-
-
-
-data sets:
-1. states_insurance_coverage.csv, https://www.kaggle.com/hhs/health-insurance
-
-2. Energy Census and Economic Data US 2010-2014.csv, https://www.kaggle.com/lislejoem/us_energy_census_gdp_10-14
-
-3. kaggle_income.csv, https://www.kaggle.com/goldenoakresearch/us-household-income-stats-geo-locations#kaggle_income.csv
-
-4. 2018 State Government Tax Dataset, https://www.census.gov/data/tables/2018/econ/stc/2018-annual.html
-
-5. Happiest States in America, http://worldpopulationreview.com/states/happiest-states/
-
-6. 2000 - 2015 Life expectancy, https://www.kaggle.com/kumarajarshi/life-expectancy-who
-
-7. 1970 - 2017 GDP, https://www.kaggle.com/fernandol/countries-of-the-world
-
-8. 2015 World happiest, https://www.kaggle.com/unsdsn/world-happiness#2015.csv
-
-9. 2016 World happiest, https://www.kaggle.com/unsdsn/world-happiness#2016.csv
-
-10. 2017 World happiest, https://www.kaggle.com/unsdsn/world-happiness#2017.csv
+See the details in our [Wiki](https://github.com/dvrk2000/DB-Project/wiki)
