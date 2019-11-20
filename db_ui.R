@@ -9,7 +9,7 @@ page_one <- tabPanel(
       h3("Team members"),
       h4("David", style = "color:red"),
       h4("Thomas"),
-      h4("Vivianna"),
+      h4("Viviannie"),
       h4("Bryanna"),
       img(src = "test.jpg", height = 100, width = 100)
     ),
