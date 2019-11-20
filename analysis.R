@@ -2,7 +2,7 @@ library(dplyr)
 library(tidyr)
 library(stringr)
 library(usmap)
-
+library(plotly)
 # create usable dataframe
 get_df <- function(df_name) {
   df <- read.csv(paste0("data/", df_name), stringsAsFactors = F, skip = 2)
@@ -35,8 +35,26 @@ creatBarChart <- function(df, title, color) {
     ggtitle(title) +
     theme_minimal()
 }
-
+createPlotlybar <- function(df, title, color) {
+  plot_ly(
+    data = df,
+    x = ~County,
+    y = ~Percentage,
+    type = "bar",
+    error_y = ~list(array = (Upper.Limit - Lower.Limit) / 2, color = I(color)),
+    color = I(color),
+    alpha = 0.7,
+    hovertext = paste0("Max = ", df$Upper.Limit,
+                       "<br>",
+                       "Min = ", df$Lower.Limit)
+  ) %>%
+    layout(
+      title = title
+    )
+}
 
 diabetes_df <- get_df("diagnosed_diabetes.csv")
 inactivity_df <- get_df("physical_inactivity.csv")
 obesity_df <- get_df("obesity_rate.csv")
+
+createPlotlybar(xxx, "Obesity percentage by county", "blue")

@@ -34,7 +34,7 @@ vis1 <- tabPanel(
     ),
     mainPanel(
       plotOutput("map_d"),
-      plotOutput("barchart_d")
+      plotlyOutput("barchart_d")
     )
   )
 )
@@ -52,7 +52,7 @@ vis2 <- tabPanel(
     ),
     mainPanel(
       plotOutput("map_p"),
-      plotOutput("barchart_p")
+      plotlyOutput("barchart_p")
     )
   )
 )
@@ -70,7 +70,7 @@ vis3 <- tabPanel(
     ),
     mainPanel(
       plotOutput("map_o"),
-      plotOutput("barchart_o")
+      plotlyOutput("barchart_o")
     )
   )
 )

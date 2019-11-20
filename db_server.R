@@ -24,31 +24,31 @@ server <- function(input, output) {
     createHeatMap(df, "Obesity rate (2016)", "Orange")
   })
   
-  output$barchart_d <- renderPlot({
+  output$barchart_d <- renderPlotly({
     if (input$state_d != "United States") {
       df <- get_specific_state(input$state_d, diabetes_df)
       if (nrow(df) >12) {
         df <- sample_n(df, 12)
       }
-      creatBarChart(df, "Diabetes percentage by county", "darkred")
+      createPlotlybar(df, "Diabetes percentage by county", "darkred")
     }
   })
-  output$barchart_p <- renderPlot({
+  output$barchart_p <- renderPlotly({
     if (input$state_p != "United States") {
       df <- get_specific_state(input$state_p, inactivity_df)
       if (nrow(df) > 12) {
         df <- sample_n(df, 12)
       }
-      creatBarChart(df, "Inactivity percentage by county", "navyblue")
+      createPlotlybar(df, "Inactivity percentage by county", "navyblue")
     }
   })
-  output$barchart_o <- renderPlot({
+  output$barchart_o <- renderPlotly({
     if (input$state_o != "United States") {
       df <- get_specific_state(input$state_o, inactivity_df)
       if (nrow(df) > 12) {
         df <- sample_n(df, 12)
       }
-      creatBarChart(df, "Obesity percentage by county", "gold")
+      createPlotlybar(df, "Obesity percentage by county", "gold")
     }
   })
   
