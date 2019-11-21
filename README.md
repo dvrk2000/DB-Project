@@ -6,3 +6,5 @@ Our team is determined to show the issue of diabetes in the United States. In th
 See the Project Proposal in our [Wiki](https://github.com/dvrk2000/DB-Project/wiki/Project-Proposal)
 
 See the Technical Report in our [Wiki](https://github.com/dvrk2000/DB-Project/wiki/Technical-Report)
+
+[ShinyApplication](https://db-project.shinyapps.io/DB-Project/)
