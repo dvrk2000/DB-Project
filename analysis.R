@@ -27,7 +27,8 @@ get_specific_state <- function(state, df) {
 # Comnine two datasets
 join_datasets <- function(df1, df2) {
   left_join(df1, df2, by = "fips") %>%
-    select(County = County.x, D_Percentage = Percentage.x, P_Percentage = Percentage.y)
+    select(County = County.x, D_Percentage = Percentage.x,
+           P_Percentage = Percentage.y)
 }
 
 # Create heatmap according to the given settings
@@ -79,13 +80,13 @@ d_o_df <- join_datasets(diabetes_df, obesity_df)
 p_o_df <- join_datasets(inactivity_df, obesity_df)
 
 # ----------------------------------------------------------
-# Test Part:
+# Test for final:
 # ----------------------------------------------------------
 # creatBarChart <- function(df, title, color) {
 #   ggplot(df, aes(x = County, y = Percentage)) +
 #     geom_bar(fill = color, stat = "identity") +
 #     geom_errorbar(aes(ymin = Lower.Limit, ymax = Upper.Limit), width = .2,
-#                   position = position_dodge(.9), color = "orange", alpha = 0.9) +
+#       position = position_dodge(.9), color = "orange", alpha = 0.9) +
 #     ggtitle(title) +
 #     theme_minimal()
 # }

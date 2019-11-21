@@ -74,7 +74,7 @@ vis3 <- tabPanel(
   )
 )
 
-# Test
+# Test for final:
 # vis4 <- tabPanel(
 #   "Compare",
 #   sidebarLayout(
@@ -114,14 +114,14 @@ page_two <- navbarMenu(
 # Interpretation Page
 page_three <- tabPanel(
   "Insights",
-  p("From what we have so far, we can observe some relationships between the 
-    three datasets. For instance, there is a clear dark-colored area on the 
-    East Coast in all three datasets. In the future final project, we will 
-    create a compare option that takes two datasets and make a scatter plot 
-    to show the correlation. Now the counties are ten names that randomly 
-    taken from the dataset. We will also make a filter for the user to see 
-    how many counties are shown and search for a specific county. Our next 
-    goal is to find supporting evidence and make a detailed analysis. We will 
+  p("From what we have so far, we can observe some relationships between the
+    three datasets. For instance, there is a clear dark-colored area on the
+    East Coast in all three datasets. In the future final project, we will
+    create a compare option that takes two datasets and make a scatter plot
+    to show the correlation. Now the counties are ten names that randomly
+    taken from the dataset. We will also make a filter for the user to see
+    how many counties are shown and search for a specific county. Our next
+    goal is to find supporting evidence and make a detailed analysis. We will
     improve our visualization to make them more interactive. Now, we are still
     a little bit weak to show the causation so we will also address it. "),
   plotOutput("scat1"),
@@ -134,24 +134,24 @@ page_four <- tabPanel(
   "Techniques",
   p("The application was built first using an analysis.R file. This file holds
   four main functions in order to ease the process of creating visualizations.
-  One function allows for consistency across each dataset that is uploaded for 
+  One function allows for consistency across each dataset that is uploaded for
   the project. This function changes string values to numerical values, provides
-  the proper arguments when reading csv files, and renames a few columns. This is
-  useful because all three of the datasets use the same column names and types of
-  data. Another function allows us to create the heatmaps consistently as well. 
-  The same goes for a function to make the bar charts consistently. Finally, 
-  there is a function that obtains each state in the data."),
+  the proper arguments when reading csv files, and renames a few columns. This
+  is useful because all three of the datasets use the same column names and
+  types of data. Another function allows us to create the heatmaps consistently
+  as well. The same goes for a function to make the bar charts consistently.
+  Finally, there is a function that obtains each state in the data."),
   p("The data was uploaded using the read_csv() function to read the csv files.
-  The libraries used were “tidyverse,” “dplyr,” “stringr,” “ggplot2,” “rsconnect,
-  ” “shiny,” “usmap,” “tidyr,” and “shinytheme.” These were all crucial to creating
-  the Shiny application. The code was organized using four different R script files.
-  The analysis.R file, as previously mentioned, is for the functions. The db_server.R
-  is for the code related to creating the server. The db_ui.R file is for the code 
-  related to creating the user interface. Finally the app.R file is to run and launch
-  the Shiny application."),
-  p("For more information, visit our ", a("wiki.", 
+  The libraries used were “tidyverse,” “dplyr,” “stringr,” “ggplot2,”
+  “rsconnect, ” “shiny,” “usmap,” “tidyr,” and “shinytheme.” These were all
+  crucial to creating the Shiny application. The code was organized using four
+  different R script files. The analysis.R file, as previously mentioned, is
+  for the functions. The db_server.R is for the code related to creating the
+  server. The db_ui.R file is for the code related to creating the user
+  interface. Finally the app.R file is to run and launch the Shiny
+  application."),
+  p("For more information, visit our ", a("wiki.",
     href = "https://github.com/dvrk2000/DB-Project/wiki/Technical-Report"))
-  
 )
 
 ui <- navbarPage(
