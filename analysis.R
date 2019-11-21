@@ -3,7 +3,11 @@ library(tidyr)
 library(stringr)
 library(usmap)
 library(plotly)
-# create usable dataframe
+
+# ----------------------------------------------------------
+# Functions:
+# ----------------------------------------------------------
+# Create consistent and usable dataframe
 get_df <- function(df_name) {
   df <- read.csv(paste0("data/", df_name), stringsAsFactors = F, skip = 2)
   df$Percentage <- as.double(df$Percentage)
@@ -13,11 +17,20 @@ get_df <- function(df_name) {
   colnames(df)[3] <- "fips"
   return(df)
 }
+
+# Take out the info in a target state
 get_specific_state <- function(state, df) {
   df %>%
     filter(State == state)
 }
 
+# Comnine two datasets
+join_datasets <- function(df1, df2) {
+  left_join(df1, df2, by = "fips") %>%
+    select(County = County.x, D_Percentage = Percentage.x, P_Percentage = Percentage.y)
+}
+
+# Create heatmap according to the given settings
 createHeatMap <- function(df, title, color) {
   plot_usmap(
     data = df, values = "Percentage", include = df$State, color = color
@@ -27,14 +40,8 @@ createHeatMap <- function(df, title, color) {
     ) +
     theme(legend.position = "right")
 }
-creatBarChart <- function(df, title, color) {
-  ggplot(df, aes(x = County, y = Percentage)) +
-    geom_bar(fill = color, stat = "identity") +
-    geom_errorbar(aes(ymin = Lower.Limit, ymax = Upper.Limit), width = .2,
-                  position = position_dodge(.9), color = "orange", alpha = 0.9) +
-    ggtitle(title) +
-    theme_minimal()
-}
+
+# Create barchart according to the given settings
 createPlotlybar <- function(df, title, color) {
   plot_ly(
     data = df,
@@ -53,18 +60,32 @@ createPlotlybar <- function(df, title, color) {
     )
 }
 
+# Create scatplot according to the given settings
+createScatplot <- function(df) {
+  ggplot(df, aes(x = P_Percentage, y = D_Percentage)) +
+    geom_point() +
+    geom_smooth(method = "lm")
+}
+
+# ----------------------------------------------------------
+# Extract data:
+# ----------------------------------------------------------
 diabetes_df <- get_df("diagnosed_diabetes.csv")
 inactivity_df <- get_df("physical_inactivity.csv")
 obesity_df <- get_df("obesity_rate.csv")
 
-d_p_df <- diabetes_df %>%
-  left_join(inactivity_df, by = "fips") %>%
-  select(County = County.x, D_Percentage = Percentage.x, P_Percentage = Percentage.y)
+d_p_df <- join_datasets(diabetes_df, inactivity_df)
+d_o_df <- join_datasets(diabetes_df, obesity_df)
+p_o_df <- join_datasets(inactivity_df, obesity_df)
 
-d_o_df <- diabetes_df %>%
-  left_join(obesity_df, by = "fips") %>%
-  select(County = County.x, D_Percentage = Percentage.x, P_Percentage = Percentage.y)
-
-p_o_df <- inactivity_df %>%
-  left_join(obesity_df, by = "fips") %>%
-  select(County = County.x, P_Percentage = Percentage.x, O_Percentage = Percentage.y)
+# ----------------------------------------------------------
+# Test Part:
+# ----------------------------------------------------------
+# creatBarChart <- function(df, title, color) {
+#   ggplot(df, aes(x = County, y = Percentage)) +
+#     geom_bar(fill = color, stat = "identity") +
+#     geom_errorbar(aes(ymin = Lower.Limit, ymax = Upper.Limit), width = .2,
+#                   position = position_dodge(.9), color = "orange", alpha = 0.9) +
+#     ggtitle(title) +
+#     theme_minimal()
+# }
