@@ -52,6 +52,32 @@ server <- function(input, output) {
     }
   })
   
+  output$scat1 <- renderPlot(
+    ggplot(data = d_p_df, aes(x = P_Percentage, y = D_Percentage)) +
+      geom_point() +
+      geom_smooth(method = "lm") +
+      labs(x = "Physical Inactivity", y = "Diabetes Rate") +
+      ggtitle("Relationship between Diabetes and Physical Inactivity")
+  )
+  
+  output$scat2 <- renderPlot(
+    ggplot(data = d_o_df, aes(x = P_Percentage, y = D_Percentage)) +
+      geom_point() +
+      geom_smooth(method = "lm") +
+      labs(x = "Obesity Rate", y = "Diabetes Rate") +
+      ggtitle("Relationship between Diabetes and Obesity") +
+      theme_classic()
+  )
+  
+  output$scat3 <- renderPlot(
+    ggplot(data = p_o_df, aes(x = P_Percentage, y = O_Percentage)) +
+      geom_point() +
+      geom_smooth(method = "lm") +
+      labs(x = "Physical Inactivity Rate", y = "Obesity Rate") +
+      ggtitle("Relationship between Phyical Inactivity and Obesity") +
+      theme_minimal()
+  )
+  
   # Testttttttt
   output$s1 <- renderPlot({
     if (input$state_d != "United States") {

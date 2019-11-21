@@ -112,17 +112,12 @@ page_two <- navbarMenu(
 )
 
 
-
-
-
-
-
-
-
 # Interpretation Page
 page_three <- tabPanel(
   "Insights",
-  titlePanel("xxxxxxxx")
+  plotOutput("scat1"),
+  plotOutput("scat2"),
+  plotOutput("scat3")
 )
 
 # Technical report page

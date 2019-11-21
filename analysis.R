@@ -57,4 +57,14 @@ diabetes_df <- get_df("diagnosed_diabetes.csv")
 inactivity_df <- get_df("physical_inactivity.csv")
 obesity_df <- get_df("obesity_rate.csv")
 
-createPlotlybar(xxx, "Obesity percentage by county", "blue")
+d_p_df <- diabetes_df %>%
+  left_join(inactivity_df, by = "fips") %>%
+  select(County = County.x, D_Percentage = Percentage.x, P_Percentage = Percentage.y)
+
+d_o_df <- diabetes_df %>%
+  left_join(obesity_df, by = "fips") %>%
+  select(County = County.x, D_Percentage = Percentage.x, P_Percentage = Percentage.y)
+
+p_o_df <- inactivity_df %>%
+  left_join(obesity_df, by = "fips") %>%
+  select(County = County.x, P_Percentage = Percentage.x, O_Percentage = Percentage.y)
