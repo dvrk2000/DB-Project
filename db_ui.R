@@ -61,26 +61,36 @@ page_one <- tabPanel(
         diabetes through careful analysis of possible causes of diabetes, and
         causes to help maintain diabetes."),
       p(strong("References")),
-      p("[1] Center for Disease Control. (n.d.) Type 1 Diabetes. Retrieved from
-https://www.cdc.gov/diabetes/basics/type1.html)."),
-      p("[2] Center for Disease Control. (n.d.) Type 2 Diabetes. Retrieved from
-https://www.cdc.gov/diabetes/basics/type2.html."),
+      p("[1] Center for Disease Control. (n.d.) Type 1 Diabetes. Retrieved from",
+        a("https://www.cdc.gov/diabetes/basics/type1.html",
+          href = "https://www.cdc.gov/diabetes/basics/type1.html")),
+      p("[2] Center for Disease Control. (n.d.) Type 2 Diabetes. Retrieved from",
+        a("https://www.cdc.gov/diabetes/basics/type2.html",
+          href = "https://www.cdc.gov/diabetes/basics/type2.html")),
       p("[3] Diabetes Research Institute Foundation. (n.d.).
-      Diabetes Statistics. Retrieved from
-https://www.diabetesresearch.org/diabetes-statistics."),
+      Diabetes Statistics. Retrieved from",
+        a("https://www.diabetesresearch.org/diabetes-statistics",
+          href = "https://www.diabetesresearch.org/diabetes-statistics")),
       p("[4] National Institute of Diabetes and
       Digestive and Kidney Diseases. (n.d.).
       Current Burden of Diabetes in the U.S.
-        Retrieved from
-        https://www.niddk.nih.gov/health-information/
+        Retrieved from",
+        a("https://www.niddk.nih.gov/health-information/
         communication-programs/ndep/
         health-professionals/
         practice-transformation-physicians-health-care-teams
-        /why-transform/current-burden-diabetes-us."),
+        /why-transform/current-burden-diabetes-us",
+          href = "    https://www.niddk.nih.gov/health-information/
+        communication-programs/ndep/
+        health-professionals/
+        practice-transformation-physicians-health-care-teams
+        /why-transform/current-burden-diabetes-us")),
       p("[5] National Institute of Diabetes and Digestive and Kidney Diseases.
-      (n.d.). Symptoms & Causes of Diabetes. Retrieved from
-        https://www.niddk.nih.gov/health-information/
-        diabetes/overview/symptoms-causes.")
+      (n.d.). Symptoms & Causes of Diabetes. Retrieved from",
+        a(" https://www.niddk.nih.gov/health-information/
+        diabetes/overview/symptoms-causes",
+          href = " https://www.niddk.nih.gov/health-information/
+        diabetes/overview/symptoms-causes"))
     )
   )
 )
