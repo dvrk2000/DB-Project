@@ -5,18 +5,82 @@ page_one <- tabPanel(
   titlePanel("Purpose"),
   sidebarLayout(
     sidebarPanel(
-      h3("Team members"),
-      h4("David"),
-      h4("Thomas"),
-      h4("Viviannie"),
-      h4("Bryanna"),
-      img(src = "test.jpg", height = 100, width = 100)
+      h4("Team members"),
+      p("David"),
+      p("Thomas"),
+      p("Viviannie"),
+      p(img(src = "bryanna.png", heigh = 40, width = 40), "Bryanna")
     ),
     mainPanel(
       h3(strong("Background")),
-      p("Overview of/background of diabetes in the U.S."),
+      p("Every year the population of people with diabetes grows,
+        and in recent years, this growth has increased rapidly [3].
+        Approximately 9.4% of people in the U.S. have diabetes,
+        which is about 30 million people [3]. There are two types
+        of diabetes, Type I and Type II. Type I diabetes occurs
+        when the individual’s pancreas is making little to no
+        insulin [1]. Type II diabetes occurs when the pancreas
+        overproduces insulin because the individual’s body is
+        abnormally responsive to insulin [2]."),
+      p("Diabetes has become a prevalent disease to the U.S., and
+        this is starting to cause issues with those who are impacted
+        because deaths from the disease and the cost of the disease
+        are both rising to a concerning state. This puts a burden on
+        the individual that is diagnosed and their families because
+        diabetes has become a more difficult disease to handle. One
+        of the issues involving diabetes is the fatality rate of the
+        disease. In 2015, diabetes was the seventh leading cause of
+        death in the U.S. [3]. This is concerning considering how common
+        diabetes is, and the fact that the U.S. is a leader in modern
+        medicine. However, another issue with diabetes is the rising
+        cost of the disease. It costs about $13,700 a year in medical
+        expenses for people with diabetes, which is about 2.3 times more
+        than people without diagnosed diabetes [3]. If the amount of people
+        with diabetes continues to rapidly increase, then this could be
+        detrimental to the U.S. population."),
+      p("Two members of the group share a personal connection to family
+        members with diabetes and have witnessed the difficulties of
+        living with diabetes. While there is already political debate
+        over reducing the cost of insulin, there is also concern about
+        ways to prevent or maintain the disease by reducing the risk factors
+        of diabetes. Individuals can do this by increasing their physical
+        activity, or adopting other lifestyle changes to help people maintain
+        their weight because this can cause Type II diabetes [5]."),
       h3(strong("Why does this matter?")),
-      p("Talk about why this is an issue and why it matters")
+      p("Diabetes is a fairly common illness in the U.S. The fact that it
+        is a common form of death in the U.S. is concerning because there
+        is a variety of ways for people to maintain their diabetes, mainly
+        though the form of pills and/or insulin. Additionally, if diabetes
+        is not controlled and treated, then it can lead to other serious
+        conditions like blindness or end-stage renal failure [4]. However,
+        the cost of maintaining diabetes has become very expensive, making
+        medicine less attainable for people with diabetes [4]. Because the
+        issue of the rising cost of healthcare and the increasing rate of
+        deaths by diabetes concerns a much larger political issue, the least
+        we can do is find ways to reduce people’s risk factors of getting
+        diabetes through careful analysis of possible causes of diabetes, and
+        causes to help maintain diabetes."),
+      p(strong("References")),
+      p("[1] Center for Disease Control. (n.d.) Type 1 Diabetes. Retrieved from
+https://www.cdc.gov/diabetes/basics/type1.html)."),
+      p("[2] Center for Disease Control. (n.d.) Type 2 Diabetes. Retrieved from
+https://www.cdc.gov/diabetes/basics/type2.html."),
+      p("[3] Diabetes Research Institute Foundation. (n.d.).
+      Diabetes Statistics. Retrieved from
+https://www.diabetesresearch.org/diabetes-statistics."),
+      p("[4] National Institute of Diabetes and
+      Digestive and Kidney Diseases. (n.d.).
+      Current Burden of Diabetes in the U.S.
+        Retrieved from
+        https://www.niddk.nih.gov/health-information/
+        communication-programs/ndep/
+        health-professionals/
+        practice-transformation-physicians-health-care-teams
+        /why-transform/current-burden-diabetes-us."),
+      p("[5] National Institute of Diabetes and Digestive and Kidney Diseases.
+      (n.d.). Symptoms & Causes of Diabetes. Retrieved from
+        https://www.niddk.nih.gov/health-information/
+        diabetes/overview/symptoms-causes.")
     )
   )
 )
