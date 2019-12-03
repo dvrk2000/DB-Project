@@ -6,10 +6,10 @@ page_one <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       h4("Team members"),
-      p("David"),
-      p("Thomas"),
-      p("Viviannie"),
-      p(img(src = "bryanna.png", heigh = 40, width = 40), "Bryanna")
+      p(img(src = "David.jpg", heigh = 40, width = 40),"David"),
+      p(img(src = "Thomans.jpg", heigh = 40, width = 40),"Thomas"),
+      p(img(src = "Viviannie.jpg", heigh = 40, width = 40),"Viviannie"),
+      p(img(src = "Bryanna.jpg", heigh = 40, width = 40), "Bryanna")
     ),
     mainPanel(
       h3(strong("Background")),
@@ -18,9 +18,9 @@ page_one <- tabPanel(
         Approximately 9.4% of people in the U.S. have diabetes,
         which is about 30 million people [3]. There are two types
         of diabetes, Type I and Type II. Type I diabetes occurs
-        when the individual’s pancreas is making little to no
+        when the individual???s pancreas is making little to no
         insulin [1]. Type II diabetes occurs when the pancreas
-        overproduces insulin because the individual’s body is
+        overproduces insulin because the individual???s body is
         abnormally responsive to insulin [2]."),
       p("Diabetes has become a prevalent disease to the U.S., and
         this is starting to cause issues with those who are impacted
@@ -57,7 +57,7 @@ page_one <- tabPanel(
         medicine less attainable for people with diabetes [4]. Because the
         issue of the rising cost of healthcare and the increasing rate of
         deaths by diabetes concerns a much larger political issue, the least
-        we can do is find ways to reduce people’s risk factors of getting
+        we can do is find ways to reduce people???s risk factors of getting
         diabetes through careful analysis of possible causes of diabetes, and
         causes to help maintain diabetes."),
       p(strong("References")),
@@ -217,8 +217,8 @@ page_four <- tabPanel(
   as well. The same goes for a function to make the bar charts consistently.
   Finally, there is a function that obtains each state in the data."),
   p("The data was uploaded using the read_csv() function to read the csv files.
-  The libraries used were “tidyverse,” “dplyr,” “stringr,” “ggplot2,”
-  “rsconnect, ” “shiny,” “usmap,” “tidyr,” and “shinytheme.” These were all
+  The libraries used were ???tidyverse,??? ???dplyr,??? ???stringr,??? ???ggplot2,???
+  ???rsconnect, ??? ???shiny,??? ???usmap,??? ???tidyr,??? and ???shinytheme.??? These were all
   crucial to creating the Shiny application. The code was organized using four
   different R script files. The analysis.R file, as previously mentioned, is
   for the functions. The db_server.R is for the code related to creating the
