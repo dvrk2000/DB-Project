@@ -6,10 +6,14 @@ page_one <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       h4("Team members"),
-      p(img(src = "David.png", heigh = 40, width = 40),"David"),
-      p(img(src = "Thomas.png", heigh = 40, width = 40),"Thomas"),
-      p(img(src = "Viviannie.png", heigh = 40, width = 40),"Viviannie"),
-      p(img(src = "Bryanna.png", heigh = 40, width = 40), "Bryanna")
+      p("David"),
+      img(src = "David.jpg", heigh = 40, width = 40),
+      p("Thomas"),
+      img(src = "Thomas.jpg", heigh = 40, width = 40),
+      p("Viviannie"),
+      img(src = "Viviannie.jpg", heigh = 40, width = 40),
+      p("Bryanna"),
+      img(src = "Bryanna.jpg", heigh = 40, width = 40)
     ),
     mainPanel(
       h3(strong("Background")),
