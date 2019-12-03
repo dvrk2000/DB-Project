@@ -1,3 +1,4 @@
+
 # Diabetes in the United States
 ## What is the project?
 
@@ -7,6 +8,4 @@ See the Project Proposal in our [Wiki](https://github.com/dvrk2000/DB-Project/wi
 
 See the Technical Report in our [Wiki](https://github.com/dvrk2000/DB-Project/wiki/Technical-Report)
 
-[ShinyApplication](https://db-project.shinyapps.io/DB-Project/)
-
-**Disclaimer: This project has been changed from the project proposal. The project proposal currently is not updated to the current project plan.**
+See the [ShinyApplication](https://db-project.shinyapps.io/DB-Project/)
