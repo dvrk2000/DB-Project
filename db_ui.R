@@ -13,9 +13,10 @@ page_one <- tabPanel(
       img(src = "test.jpg", height = 100, width = 100)
     ),
     mainPanel(
-      h3("Diabetes Report"),
-      p("Plots, data tables, etc. would go here"),
-      img(src = "test.jpg", height = 500, width = 500)
+      h3(strong("Background")),
+      p("Overview of/background of diabetes in the U.S."),
+      h3(strong("Why does this matter?")),
+      p("Talk about why this is an issue and why it matters")
     )
   )
 )
