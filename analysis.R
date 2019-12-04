@@ -68,6 +68,12 @@ createScatplot <- function(df) {
     geom_smooth(method = "lm")
 }
 
+createSearchtable <- function(df) {
+  df <- df %>% select(-fips) %>%
+    select(County, State, Rate = Percentage)
+  df$Rate <- paste0(df$Rate, "%")
+  df
+}
 # ----------------------------------------------------------
 # Extract data:
 # ----------------------------------------------------------

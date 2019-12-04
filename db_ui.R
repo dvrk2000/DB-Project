@@ -104,7 +104,13 @@ vis1 <- tabPanel(
       selectInput("state_d",
                   label = "Choose a state",
                   choices = c("United States", unique(diabetes_df$State)),
-                  selected = "United States")
+                  selected = "United States"),
+      br(),
+      br(),
+      br(),
+      br(),
+      uiOutput("search_d"),
+      tableOutput("specific_d")
     ),
     mainPanel(
       plotOutput("map_d"),
@@ -122,7 +128,13 @@ vis2 <- tabPanel(
       selectInput("state_p",
                   label = "Choose a state",
                   choices = c("United States", unique(inactivity_df$State)),
-                  selected = "United States")
+                  selected = "United States"),
+      br(),
+      br(),
+      br(),
+      br(),
+      uiOutput("search_p"),
+      tableOutput("specific_p")
     ),
     mainPanel(
       plotOutput("map_p"),
@@ -140,7 +152,13 @@ vis3 <- tabPanel(
       selectInput("state_o",
                   label = "Choose a state",
                   choices = c("United States", unique(obesity_df$State)),
-                  selected = "United States")
+                  selected = "United States"),
+      br(),
+      br(),
+      br(),
+      br(),
+      uiOutput("search_o"),
+      tableOutput("specific_o")
     ),
     mainPanel(
       plotOutput("map_o"),
@@ -148,33 +166,6 @@ vis3 <- tabPanel(
     )
   )
 )
-
-# Test for final:
-# vis4 <- tabPanel(
-#   "Compare",
-#   sidebarLayout(
-#     sidebarPanel(
-#       helpText("Choose one"),
-#       selectInput("state1",
-#                   label = "Choose a category to compare",
-#                   choices = c("D", "P", "O"),
-#                   selected = "D"),
-#       selectInput("state2",
-#                   label = "Choose a category to compare",
-#                   choices = c("D", "P", "O"),
-#                   selected = "P"),
-#       selectInput("state3",
-#                   label = "Choose a category to compare",
-#                   choices = c("D", "P", "O"),
-#                   selected = "O")
-#     ),
-#     mainPanel(
-#       plotOutput("s1"),
-#       plotOutput("s2"),
-#       plotOutput("s3")
-#     )
-#   )
-# )
 
 # Data visualization page
 page_two <- navbarMenu(
@@ -189,6 +180,7 @@ page_two <- navbarMenu(
 # Interpretation Page
 page_three <- tabPanel(
   "Insights",
+  titlePanel("Findings"),
   p("As previously discussed, factors like physical inactivity
     and weight can make an impact on whether someone is
     diagnosed with diabetes, or how they are able to maintain the
@@ -202,6 +194,7 @@ page_three <- tabPanel(
     group wants to understand that there is a correlational relationship
     between the rate of diabetes and the rate of physical inactivity and
     obesity to ensure that these factors have an impact on the rate of diabetes."),
+  br(),
   plotOutput("scat1"),
   p("This plot shows the relationship between the rate of diagnosed diabetes
     and the rate of physical inactivity. There is a positive correlation between
@@ -210,18 +203,23 @@ page_three <- tabPanel(
     possibly has an impact on how many people in the U.S. have diabetes. If people
     that are less physically active are more likely to get diabetes, then increasing
     their activity could reduce their likelihood of a diabetes diagnosis."),
+  br(),
+  br(),
   plotOutput("scat2"),
   p("This plot shows the relationship between the rate of diabetes and the rate of
     obesity in the U.S. There is also a positive correlation shown here. As the rate
     of obesity increases, so does the rate of diabetes. Therefore, an assumption
     can be made about the rate of obesity, and that it can cause a greater likelihood
     of diabetes."),
+  br(),
+  br(),
   plotOutput("scat3"),
   p("This plot shows the relationship between the rate of physical inactivity
     and the rate of obesity. As the rate of physical inactivity increases, the
     rate of obesity increases. This shows that physical inactivity is a likely
     factor to the rate of obesity. If people are more physically active, then
     this could reduce the rate of obesity."),
+  br(),
   p("In conclusion, obesity and physical inactivity are risk factors to
     diabetes. Whether it causes diabetes or makes it harder to maintain, if people
     start making healthier lifestyle choices, then they could reduce the rate of
