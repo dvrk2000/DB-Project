@@ -54,7 +54,7 @@ server <- function(input, output) {
 
   output$scat1 <- renderPlot(
     createScatplot(d_p_df) +
-      labs(x = "Physical Inactivity", y = "Diabetes Rate") +
+      labs(x = "Physical Inactivity Rate", y = "Diabetes Rate") +
       ggtitle("Relationship between Diabetes and Physical Inactivity")
   )
 

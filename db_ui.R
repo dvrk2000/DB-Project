@@ -193,19 +193,53 @@ page_two <- navbarMenu(
 # Interpretation Page
 page_three <- tabPanel(
   "Insights",
-  p("From what we have so far, we can observe some relationships between the
-    three datasets. For instance, there is a clear dark-colored area on the
-    East Coast in all three datasets. In the future final project, we will
-    create a compare option that takes two datasets and make a scatter plot
-    to show the correlation. Now the counties are ten names that randomly
-    taken from the dataset. We will also make a filter for the user to see
-    how many counties are shown and search for a specific county. Our next
-    goal is to find supporting evidence and make a detailed analysis. We will
-    improve our visualization to make them more interactive. Now, we are still
-    a little bit weak to show the causation so we will also address it. "),
+  p("As previously discussed, factors like physical inactivity
+    and weight can make an impact on whether someone is
+    diagnosed with diabetes, or how they are able to maintain the
+    disease. By controlling these factors, people are able to reduce
+    their likelihood of getting Type II diabetes. Further, those who
+    are already diagnosed with diabetes could reduce their likelihood
+    of experiencing complications of the disease through the management
+    of their physical activity and weight. Diabetes is primarily managed
+    by the person affected by it, so through careful lifestyle choices
+    people with diabetes could help with controlling the disease. This
+    group wants to understand that there is a correlational relationship
+    between the rate of diabetes and the rate of physical inactivity and
+    obesity to ensure that these factors have an impact on the rate of diabetes."),
   plotOutput("scat1"),
+  p("This plot shows the relationship between the rate of diagnosed diabetes
+    and the rate of physical inactivity. There is a positive correlation between
+    these two variables. As the rate of physical inactivity increases, the rate
+    of diabetes also increases. This is indicative that physical inactivity
+    possibly has an impact on how many people in the U.S. have diabetes. If people
+    that are less physically active are more likely to get diabetes, then increasing
+    their activity could reduce their likelihood of a diabetes diagnosis."),
   plotOutput("scat2"),
-  plotOutput("scat3")
+  P("This plot shows the relationship between the rate of diabetes and the rate of
+    obesity in the U.S. There is also a positive correlation shown here. As the rate
+    of obesity increases, so does the rate of diabetes. Therefore, an assumption
+    can be made about the rate of obesity, and that it can cause a greater likelihood
+    of diabetes."),
+  plotOutput("scat3"),
+  p("This plot shows the relationship between the rate of physical inactivity
+    and the rate of obesity. As the rate of physical inactivity increases, the
+    rate of obesity increases. This shows that physical inactivity is a likely
+    factor to the rate of obesity. If people are more physically active, then
+    this could reduce the rate of obesity."),
+  p("In conclusion, obesity and physical inactivity are risk factors to
+    diabetes. Whether it causes diabetes or makes it harder to maintain, if people
+    start making healthier lifestyle choices, then they could reduce the rate of
+    diabetes in the U.S. First, the rate of obesity could decrease as the rate of
+    physical inactivity decreases. The more active people are, the healthier they
+    could become. In addition to physical inactivity, other lifestyle choices could
+    help with weight, like healthier food choices and regular visits to a doctor.
+    Also, overall physical activity could make an impact on the rate of diabetes.
+    If people attempt to increase their physical activity, then the rate of diabetes
+    could also decrease. This could be done with taking time out of their day to go
+    on a walk, or even participating in recreational activities like biking.
+    Controlling diabetes is not just about taking medication or insulin, people’s
+    lifestyles also make an impact on their chances of becoming diabetic, and their
+    ability to maintain it.")
 )
 
 # Technical report page
