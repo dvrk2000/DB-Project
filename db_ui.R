@@ -2,10 +2,17 @@
 source("analysis.R")
 page_one <- tabPanel(
   "About us",
-  titlePanel("Purpose"),
+  titlePanel("Overview"),
   sidebarLayout(
     sidebarPanel(
-      h4("Team members"),
+      h3("Affiliation"),
+      p("INFO-201: Technical Foundations of Informations"),
+      p("The Information School"),
+      p("University of Washington"),
+      p("Autumn 2019"),
+      br(),
+      br(),
+      h3("Team members"),
       p("David"),
       p("Thomas"),
       p("Viviannie"),
@@ -18,9 +25,9 @@ page_one <- tabPanel(
         Approximately 9.4% of people in the U.S. have diabetes,
         which is about 30 million people [3]. There are two types
         of diabetes, Type I and Type II. Type I diabetes occurs
-        when the individual???s pancreas is making little to no
+        when the individual's pancreas is making little to no
         insulin [1]. Type II diabetes occurs when the pancreas
-        overproduces insulin because the individual???s body is
+        overproduces insulin because the individual's body is
         abnormally responsive to insulin [2]."),
       p("Diabetes has become a prevalent disease to the U.S., and
         this is starting to cause issues with those who are impacted
@@ -57,7 +64,7 @@ page_one <- tabPanel(
         medicine less attainable for people with diabetes [4]. Because the
         issue of the rising cost of healthcare and the increasing rate of
         deaths by diabetes concerns a much larger political issue, the least
-        we can do is find ways to reduce people???s risk factors of getting
+        we can do is find ways to reduce people's risk factors of getting
         diabetes through careful analysis of possible causes of diabetes, and
         causes to help maintain diabetes."),
       p(strong("References")),
@@ -231,7 +238,7 @@ page_three <- tabPanel(
     If people attempt to increase their physical activity, then the rate of diabetes
     could also decrease. This could be done with taking time out of their day to go
     on a walk, or even participating in recreational activities like biking.
-    Controlling diabetes is not just about taking medication or insulin, people???s
+    Controlling diabetes is not just about taking medication or insulin, people's
     lifestyles also make an impact on their chances of becoming diabetic, and their
     ability to maintain it.")
 )
@@ -249,8 +256,8 @@ page_four <- tabPanel(
   as well. The same goes for a function to make the bar charts consistently.
   Finally, there is a function that obtains each state in the data."),
   p("The data was uploaded using the read_csv() function to read the csv files.
-  The libraries used were ???tidyverse,??? ???dplyr,??? ???stringr,??? ???ggplot2,???
-  ???rsconnect, ??? ???shiny,??? ???usmap,??? ???tidyr,??? and ???shinytheme.??? These were all
+  The libraries used were 'tidyverse,' 'dplyr,' 'stringr,' 'ggplot2,'
+  'rsconnect,' 'shiny,' 'usmap,' 'tidyr,' and 'shinytheme.' These were all
   crucial to creating the Shiny application. The code was organized using four
   different R script files. The analysis.R file, as previously mentioned, is
   for the functions. The db_server.R is for the code related to creating the

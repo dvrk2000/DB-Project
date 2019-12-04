@@ -68,12 +68,14 @@ createScatplot <- function(df) {
     geom_smooth(method = "lm")
 }
 
+# Construct table for text search
 createSearchtable <- function(df) {
   df <- df %>% select(-fips) %>%
     select(County, State, Rate = Percentage)
   df$Rate <- paste0(df$Rate, "%")
   df
 }
+
 # ----------------------------------------------------------
 # Extract data:
 # ----------------------------------------------------------
@@ -84,15 +86,3 @@ obesity_df <- get_df("obesity_rate.csv")
 d_p_df <- join_datasets(diabetes_df, inactivity_df)
 d_o_df <- join_datasets(diabetes_df, obesity_df)
 p_o_df <- join_datasets(inactivity_df, obesity_df)
-
-# ----------------------------------------------------------
-# Test for final:
-# ----------------------------------------------------------
-# creatBarChart <- function(df, title, color) {
-#   ggplot(df, aes(x = County, y = Percentage)) +
-#     geom_bar(fill = color, stat = "identity") +
-#     geom_errorbar(aes(ymin = Lower.Limit, ymax = Upper.Limit), width = .2,
-#       position = position_dodge(.9), color = "orange", alpha = 0.9) +
-#     ggtitle(title) +
-#     theme_minimal()
-# }

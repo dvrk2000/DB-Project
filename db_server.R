@@ -54,40 +54,56 @@ server <- function(input, output) {
   
   output$scat1 <- renderPlot(
     createScatplot(d_p_df) +
-      labs(x = "Physical Inactivity Rate", y = "Diabetes Rate") +
-      ggtitle("Relationship between Diabetes and Physical Inactivity")
+      theme(plot.title = element_text(size = 20),
+            axis.title.x = element_text(size = 14),
+            axis.title.y = element_text(size = 14)) +
+      labs(title = "Relationship between Diabetes and Physical Inactivity",
+           x = "Physical Inactivity Rate",
+           y = "Diabetes Rate")
   )
   
   output$scat2 <- renderPlot(
     createScatplot(d_o_df) +
-      labs(x = "Obesity Rate", y = "Diabetes Rate") +
-      ggtitle("Relationship between Diabetes and Obesity") +
-      theme_classic()
+      theme(plot.title = element_text(size = 20),
+            axis.title.x = element_text(size = 14),
+            axis.title.y = element_text(size = 14)) +
+      labs(title = "Relationship between Diabetes and Obesity",
+           x = "Obesity Rate",
+           y = "Diabetes Rate")
   )
   
   output$scat3 <- renderPlot(
     createScatplot(p_o_df) +
-      labs(x = "Physical Inactivity Rate", y = "Obesity Rate") +
-      ggtitle("Relationship between Phyical Inactivity and Obesity") +
-      theme_minimal()
+      theme(plot.title = element_text(size = 20),
+            axis.title.x = element_text(size = 14),
+            axis.title.y = element_text(size = 14)) +
+      labs(title = "Relationship between Physical Inactivity and Obesity",
+           x = "Physical Inactivity Rate",
+           y = "Obesity Rate")
   )
   
   output$specific_d <- renderTable({
-    target <- agrep(input$county_d, diabetes_df$County, ignore.case = T)
-    df <- diabetes_df[target, ]
-    createSearchtable(df)
+    if (input$state_d != "United States") {
+      target <- agrep(input$county_d, diabetes_df$County, ignore.case = T)
+      df <- diabetes_df[target, ]
+      createSearchtable(df)
+    }
   })
   
   output$specific_p <- renderTable({
-    target <- agrep(input$county_p, inactivity_df$County, ignore.case = T)
-    df <- inactivity_df[target, ]
-    createSearchtable(df)
+    if (input$state_p != "United States") {
+      target <- agrep(input$county_p, inactivity_df$County, ignore.case = T)
+      df <- inactivity_df[target, ]
+      createSearchtable(df)
+    }
   })
   
   output$specific_o <- renderTable({
-    target <- agrep(input$county_o, obesity_df$County, ignore.case = T)
-    df <- obesity_df[target, ]
-    createSearchtable(df)
+    if (input$state_o != "United States") {
+      target <- agrep(input$county_o, obesity_df$County, ignore.case = T)
+      df <- obesity_df[target, ]
+      createSearchtable(df)
+    }
   })
   
   output$search_d <- renderUI({
@@ -113,33 +129,4 @@ server <- function(input, output) {
                 value = "Miami")
     }
   })
-  
-  # Test for final:
-  # output$s1 <- renderPlot({
-  #   if (input$state_d != "United States") {
-  #     df <- get_specific_state(input$state_d, diabetes_df)
-  #     if (nrow(df) >12) {
-  #       df <- sample_n(df, 12)
-  #     }
-  #     creatBarChart(df, "Diabetes percentage by county", "darkred")
-  #   }
-  # })
-  # output$s2 <- renderPlot({
-  #   if (input$state_d != "United States") {
-  #     df <- get_specific_state(input$state_d, diabetes_df)
-  #     if (nrow(df) >12) {
-  #       df <- sample_n(df, 12)
-  #     }
-  #     creatBarChart(df, "Diabetes percentage by county", "darkred")
-  #   }
-  # })
-  # output$s3 <- renderPlot({
-  #   if (input$state_d != "United States") {
-  #     df <- get_specific_state(input$state_d, diabetes_df)
-  #     if (nrow(df) >12) {
-  #       df <- sample_n(df, 12)
-  #     }
-  #     creatBarChart(df, "Diabetes percentage by county", "darkred")
-  #   }
-  # })
 }
