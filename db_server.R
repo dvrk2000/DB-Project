@@ -85,9 +85,11 @@ server <- function(input, output) {
   })
   
   output$specific_o <- renderTable({
+    if (input$state_d != "United States"){
     target <- agrep(input$county_o, obesity_df$County, ignore.case = T)
     df <- obesity_df[target, ]
     createSearchtable(df)
+    }
   })
   
   output$search_d <- renderUI({
