@@ -7,13 +7,9 @@ page_one <- tabPanel(
     sidebarPanel(
       h4("Team members"),
       p("David"),
-      img(src = "David.jpg", heigh = 40, width = 40),
       p("Thomas"),
-      img(src = "Thomas.jpg", heigh = 40, width = 40),
       p("Viviannie"),
-      img(src = "Viviannie.jpg", heigh = 40, width = 40),
-      p("Bryanna"),
-      img(src = "Bryanna.jpg", heigh = 40, width = 40)
+      p("Bryanna")
     ),
     mainPanel(
       h3(strong("Background")),
@@ -237,7 +233,7 @@ page_three <- tabPanel(
     If people attempt to increase their physical activity, then the rate of diabetes
     could also decrease. This could be done with taking time out of their day to go
     on a walk, or even participating in recreational activities like biking.
-    Controlling diabetes is not just about taking medication or insulin, people’s
+    Controlling diabetes is not just about taking medication or insulin, people???s
     lifestyles also make an impact on their chances of becoming diabetic, and their
     ability to maintain it.")
 )
