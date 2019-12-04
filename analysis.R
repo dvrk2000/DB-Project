@@ -70,7 +70,8 @@ createScatplot <- function(df) {
 
 # Construct table for text search
 createSearchtable <- function(df) {
-  df <- df %>% select(-fips) %>%
+  df <- df %>%
+    select(-fips) %>%
     select(County, State, Rate = Percentage)
   df$Rate <- paste0(df$Rate, "%")
   df

@@ -68,11 +68,11 @@ page_one <- tabPanel(
         diabetes through careful analysis of possible causes of diabetes, and
         causes to help maintain diabetes."),
       p(strong("References")),
-      p("[1] Center for Disease Control. (n.d.) Type 1 Diabetes. Retrieved from",
-        a("https://www.cdc.gov/diabetes/basics/type1.html",
+      p("[1] Center for Disease Control. (n.d.) Type 1 Diabetes. Retrieved
+        from", a("https://www.cdc.gov/diabetes/basics/type1.html",
           href = "https://www.cdc.gov/diabetes/basics/type1.html")),
-      p("[2] Center for Disease Control. (n.d.) Type 2 Diabetes. Retrieved from",
-        a("https://www.cdc.gov/diabetes/basics/type2.html",
+      p("[2] Center for Disease Control. (n.d.) Type 2 Diabetes. Retrieved
+        from", a("https://www.cdc.gov/diabetes/basics/type2.html",
           href = "https://www.cdc.gov/diabetes/basics/type2.html")),
       p("[3] Diabetes Research Institute Foundation. (n.d.).
       Diabetes Statistics. Retrieved from",
@@ -106,8 +106,7 @@ vis1 <- tabPanel(
   "Diabetes Info",
   sidebarLayout(
     sidebarPanel(
-      helpText("Create bar charts with information
-               from diabetes"),
+      helpText("Select a state to show the diabetes information"),
       selectInput("state_d",
                   label = "Choose a state",
                   choices = c("United States", unique(diabetes_df$State)),
@@ -130,8 +129,7 @@ vis2 <- tabPanel(
   "Physical Inactivity Info",
   sidebarLayout(
     sidebarPanel(
-      helpText("Create bar charts with information
-               from physical inactivity"),
+      helpText("Select a state to show the physical inactivity information"),
       selectInput("state_p",
                   label = "Choose a state",
                   choices = c("United States", unique(inactivity_df$State)),
@@ -154,8 +152,7 @@ vis3 <- tabPanel(
   "Obesity Info",
   sidebarLayout(
     sidebarPanel(
-      helpText("Create bar charts with information
-               from obesity"),
+      helpText("Select a state to show the obesity information"),
       selectInput("state_o",
                   label = "Choose a state",
                   choices = c("United States", unique(obesity_df$State)),
@@ -200,24 +197,28 @@ page_three <- tabPanel(
     people with diabetes could help with controlling the disease. This
     group wants to understand that there is a correlational relationship
     between the rate of diabetes and the rate of physical inactivity and
-    obesity to ensure that these factors have an impact on the rate of diabetes."),
+    obesity to ensure that these factors have an impact on
+    the rate of diabetes."),
   br(),
   plotOutput("scat1"),
   p("This plot shows the relationship between the rate of diagnosed diabetes
     and the rate of physical inactivity. There is a positive correlation between
     these two variables. As the rate of physical inactivity increases, the rate
     of diabetes also increases. This is indicative that physical inactivity
-    possibly has an impact on how many people in the U.S. have diabetes. If people
-    that are less physically active are more likely to get diabetes, then increasing
-    their activity could reduce their likelihood of a diabetes diagnosis."),
+    possibly has an impact on how many people in the U.S. have diabetes. If
+    people that are less physically active are more likely to get diabetes,
+    then increasing their activity could reduce their likelihood of a
+    diabetes diagnosis."),
   br(),
   br(),
   plotOutput("scat2"),
-  p("This plot shows the relationship between the rate of diabetes and the rate of
-    obesity in the U.S. There is also a positive correlation shown here. As the rate
-    of obesity increases, so does the rate of diabetes. Therefore, an assumption
-    can be made about the rate of obesity, and that it can cause a greater likelihood
-    of diabetes."),
+  p("This plot shows the relationship between the rate of
+  diabetes and the rate of obesity in the U.S. There is
+  also a positive correlation shown here. As the rate
+  of obesity increases, so does the rate of diabetes.
+  Therefore, an assumption can be made about the rate
+  of obesity, and that it can cause a greater likelihood
+  of diabetes."),
   br(),
   br(),
   plotOutput("scat3"),
@@ -228,19 +229,21 @@ page_three <- tabPanel(
     this could reduce the rate of obesity."),
   br(),
   p("In conclusion, obesity and physical inactivity are risk factors to
-    diabetes. Whether it causes diabetes or makes it harder to maintain, if people
-    start making healthier lifestyle choices, then they could reduce the rate of
-    diabetes in the U.S. First, the rate of obesity could decrease as the rate of
-    physical inactivity decreases. The more active people are, the healthier they
-    could become. In addition to physical inactivity, other lifestyle choices could
-    help with weight, like healthier food choices and regular visits to a doctor.
-    Also, overall physical activity could make an impact on the rate of diabetes.
-    If people attempt to increase their physical activity, then the rate of diabetes
-    could also decrease. This could be done with taking time out of their day to go
-    on a walk, or even participating in recreational activities like biking.
-    Controlling diabetes is not just about taking medication or insulin, people's
-    lifestyles also make an impact on their chances of becoming diabetic, and their
-    ability to maintain it.")
+    diabetes. Whether it causes diabetes or makes it harder to
+    maintain, if people start making healthier lifestyle choices,
+    then they could reduce the rate of diabetes in the U.S. First, the
+    rate of obesity could decrease as the rate of physical inactivity
+    decreases. The more active people are, the healthier they could become.
+    In addition to physical inactivity, other lifestyle choices could
+    help with weight, like healthier food choices and regular visits to
+    a doctor. Also, overall physical activity could make an impact on the
+    rate of diabetes. If people attempt to increase their physical
+    activity, then the rate of diabetes could also decrease. This could
+    be done with taking time out of their day to go on a walk, or even
+    participating in recreational activities like biking. Controlling
+    diabetes is not just about taking medication or insulin, people's
+    lifestyles also make an impact on their chances of becoming
+    diabetic, and their ability to maintain it.")
 )
 
 # Technical report page
