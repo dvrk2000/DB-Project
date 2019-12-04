@@ -215,7 +215,7 @@ page_three <- tabPanel(
     that are less physically active are more likely to get diabetes, then increasing
     their activity could reduce their likelihood of a diabetes diagnosis."),
   plotOutput("scat2"),
-  P("This plot shows the relationship between the rate of diabetes and the rate of
+  p("This plot shows the relationship between the rate of diabetes and the rate of
     obesity in the U.S. There is also a positive correlation shown here. As the rate
     of obesity increases, so does the rate of diabetes. Therefore, an assumption
     can be made about the rate of obesity, and that it can cause a greater likelihood
